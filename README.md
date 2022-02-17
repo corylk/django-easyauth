@@ -4,7 +4,7 @@ A simple authentication backend to support Azure App Service "easyauth" authenti
 
 ### How it works
 
-A user signed into a Django app with App Service authentication will have their email address checked against the app's Users list. If matched, they will be logged in automatically. Otherwise, they will fall back to Django's default login process.
+A user authenticating with a Django app that is already signed in under App Service Authentication will have their email address checked against the app's Users list. If matched, they will be logged in automatically. Otherwise, they will fall back to Django's default login process.
 
 # Installation
 
