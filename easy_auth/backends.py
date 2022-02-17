@@ -8,5 +8,5 @@ class EasyAuthBackend(ModelBackend):
         try:
             user = User.objects.get(email=user_id)
         except User.DoesNotExist:
-            return None
+            return super().authenticate(request, username, password)
         return user
