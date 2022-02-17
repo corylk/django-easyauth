@@ -27,8 +27,8 @@ AUTHENTICATION_BACKENDS = [
 ]
 ```
 
-### Add to url conf
-Specify the path that is current [login URL](https://docs.djangoproject.com/en/4.0/ref/settings/#login-url).
+### Add the login path to url conf
+Specify the path that is the current [login URL](https://docs.djangoproject.com/en/4.0/ref/settings/#login-url).
 
 For example if the login URL `accounts/login/`, then add:
 
