@@ -1,6 +1,10 @@
 # Overview
 
-A simple authentication backend to support Azure App Service "easyauth" authentication.
+A simple authentication backend to support Azure App Service "easyauth" authentication on top of Django's built-in user authentication system.
+
+### How it works
+
+A user signed into a Django app with App Service authentication will have their email address checked against the app's Users list. If matched, they will be logged in automatically. Otherwise, they will fall back to Django's default login process.
 
 # Installation
 
@@ -23,11 +27,14 @@ AUTHENTICATION_BACKENDS = [
 ]
 ```
 
-### Add to urls, above `admin.site.urls`.
-Specify the path that is currently default for admin. For example if admin has a path `'admin/'`, then use `'admin/login/'`.
+### Add to url conf
+Specify the path that is current [login URL](https://docs.djangoproject.com/en/4.0/ref/settings/#login-url).
+
+For example if the login URL `accounts/login/`, then add:
+
 ```py
 urlpatterns = [
-    path('login/', include('easy_auth.urls')),
+    path('accounts/login/', include('easy_auth.urls')),
     ...
 ]
 ```
