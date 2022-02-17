@@ -28,13 +28,13 @@ AUTHENTICATION_BACKENDS = [
 ```
 
 ### Add the login path to url conf
-Specify the path that is the current [login URL](https://docs.djangoproject.com/en/4.0/ref/settings/#login-url).
+Specify the path that is the current [login URL](https://docs.djangoproject.com/en/4.0/ref/settings/#login-url). The path must be specified before any projects that might override it (e.g. `admin`).
 
-For example if the login URL is `accounts/login/`, then add:
+For example if the login URL is `admin/login/`, then add:
 
 ```py
 urlpatterns = [
-    path('accounts/login/', include('easy_auth.urls')),
+    path('admin/login/', include('easy_auth.urls')),
     ...
 ]
 ```
