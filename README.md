@@ -12,7 +12,7 @@ TBD
 
 # Configuration
 
-### Add to installed apps.
+### Add to installed apps
 ```py
 INSTALLED_APPS = [
     ...
@@ -20,7 +20,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-### Add to authentication backends.
+### Add to authentication backends
 ```py
 AUTHENTICATION_BACKENDS = [
     'easy_auth.backends.EasyAuthBackend',
