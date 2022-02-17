@@ -8,7 +8,17 @@ A user authenticating with a Django app that is already signed in under App Serv
 
 # Installation
 
-TBD
+Clone this repo and in the root run:
+```sh
+python setup.py sdist
+```
+
+This will create a package under `dist/`.
+
+From your Django project, run:
+```sh
+python -m pip install --user /path/to/dist/django-easyauth-0.1.tar.gz
+```
 
 # Configuration
 
