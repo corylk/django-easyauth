@@ -8,7 +8,6 @@ class EasyAuthLoginView(LoginView):
 
     def dispatch(self, request, *args, **kwargs):
         user = authenticate(request)
-
         if not user:
             return super().dispatch(request, *args, **kwargs)
 
@@ -19,4 +18,5 @@ class EasyAuthLoginView(LoginView):
                 "Redirection loop for authenticated user detected. Check that "
                 "your LOGIN_REDIRECT_URL doesn't point to a login page."
             )
+
         return HttpResponseRedirect(redirect_to)
