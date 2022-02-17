@@ -23,7 +23,7 @@ INSTALLED_APPS = [
 ### Add to authentication backends.
 ```py
 AUTHENTICATION_BACKENDS = [
-    'easy_auth.backends.EasyAuthBackend'
+    'easy_auth.backends.EasyAuthBackend',
 ]
 ```
 
