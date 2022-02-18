@@ -23,6 +23,7 @@ python -m pip install --user /path/to/dist/django-easyauth-0.1.tar.gz
 # Configuration
 
 ### Add to installed apps
+
 ```py
 INSTALLED_APPS = [
     'easy_auth',
@@ -38,6 +39,7 @@ AUTHENTICATION_BACKENDS = [
 ```
 
 ### Add the login path to url conf
+
 Specify the path that is the current [login URL](https://docs.djangoproject.com/en/4.0/ref/settings/#login-url). The path must be specified before any projects that might override it (e.g. `admin`).
 
 For example if the login URL is `admin/login/`, then add:
@@ -47,4 +49,12 @@ urlpatterns = [
     path('admin/login/', include('easy_auth.urls')),
     ...
 ]
+```
+
+### Override the login template
+
+Optionally, override the login template by specifying in settings:
+
+```py
+LOGIN_TEMPLATE = 'path/to/your/login.html'
 ```
