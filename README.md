@@ -53,7 +53,7 @@ urlpatterns = [
 
 ### Override the login template
 
-Optionally, override the login template by specifying in settings:
+Optionally, if you want to override the fallback login template, it can be changed in settings:
 
 ```py
 LOGIN_TEMPLATE = 'path/to/your/login.html'
