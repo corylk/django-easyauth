@@ -50,11 +50,3 @@ urlpatterns = [
     ...
 ]
 ```
-
-### Override the login template
-
-Optionally, if you want to override the fallback login template, it can be changed in settings:
-
-```py
-LOGIN_TEMPLATE = 'path/to/your/login.html'
-```
