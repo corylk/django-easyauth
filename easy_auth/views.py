@@ -1,12 +1,9 @@
-from django.conf import settings
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.views import LoginView
 from django.http.response import HttpResponseRedirect
 
 
 class EasyAuthLoginView(LoginView):
-    template_name = 'admin/login.html'
-
     def dispatch(self, request, *args, **kwargs):
         user = authenticate(request)
         if not user:
