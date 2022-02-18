@@ -4,8 +4,6 @@ from django.http.response import HttpResponseRedirect
 
 
 class EasyAuthLoginView(LoginView):
-    template_name = 'login.html'
-
     def dispatch(self, request, *args, **kwargs):
         user = authenticate(request)
         if not user:
