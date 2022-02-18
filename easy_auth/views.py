@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.views import LoginView
 from django.http.response import HttpResponseRedirect
 from django.views.generic.base import RedirectView
+from django.views.generic.edit import ModelFormMixin
 
 
 class EasyAuthLoginView(RedirectView):
@@ -13,6 +14,7 @@ class EasyAuthLoginView(RedirectView):
                 settings, 'LOGIN_TEMPLATE', 'admin/login.html'))(request)
 
         login(request, user)
+        # TODO: provide the right pattern
         redirect_to = self.get_redirect_url(*args, **kwargs)
         if redirect_to == self.request.path:
             raise ValueError(
