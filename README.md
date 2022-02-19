@@ -22,6 +22,8 @@ python -m pip install --user /path/to/dist/django-easyauth-0.1.tar.gz
 
 # Configuration
 
+## Required configuration
+
 ### Add to installed apps
 
 ```py
@@ -51,6 +53,8 @@ urlpatterns = [
 ]
 ```
 
+## Optional configuration
+
 ### Change the header used to access the user ID
 
 By default, the user ID (email) is expected in the `X-MS-CLIENT-PRINCIPAL-NAME` header provided by App Service ([read more](https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-user-identities)). To change which header is used, specify it in settings:
@@ -61,7 +65,7 @@ USERID_HEADER = 'x-ms-some-other-header'
 
 ### Override the login template
 
-Optionally, if you want to override the fallback login template, it can be changed in settings:
+If you want to override the fallback login template, it can be changed in settings:
 
 ```py
 LOGIN_TEMPLATE = 'path/to/your/login.html'
