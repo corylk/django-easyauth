@@ -61,6 +61,8 @@ By default, the user ID (email) is expected in the `X-MS-CLIENT-PRINCIPAL-NAME` 
 USERID_HEADER = 'x-ms-some-other-header'
 ```
 
+The header name is case insensitive.
+
 ### Override the login template
 
 If you want to override the template of the fallback login form, the template path can be changed with `LOGIN_TEMPLATE`:
