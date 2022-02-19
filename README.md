@@ -63,6 +63,17 @@ USERID_HEADER = 'x-ms-some-other-header'
 
 The header name is case insensitive.
 
+### Redirect authenticated users that access login
+
+By default, authenticated users will still be able to access the Django login form if accessed directly. This behavior can be changed with `REDIRECT_AUTH_USERS`, along with `LOGIN_REDIRECT_URL`.
+
+Before enabling this feature, read more about the risks of doing this [here](https://docs.djangoproject.com/en/4.0/topics/auth/default/#django.contrib.auth.views.LoginView.redirect_authenticated_user).
+
+```py
+REDIRECT_AUTH_USERS = True
+LOGIN_REDIRECT_URL = '/admin'
+```
+
 ### Override the login template
 
 If you want to override the template of the fallback login form, the template path can be changed with `LOGIN_TEMPLATE`:

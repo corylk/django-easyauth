@@ -1,11 +1,12 @@
-from django.conf import settings
 from django.urls import path
 
-from .constants import LOGIN_TEMPLATE
+from .helpers import get_option
 from .views import EasyAuthLoginView
 
 
 urlpatterns = [
-    path('', EasyAuthLoginView.as_view(template_name=getattr(
-        settings, 'LOGIN_TEMPLATE', LOGIN_TEMPLATE)), name="login"),
+    path('', EasyAuthLoginView.as_view(
+        template_name=get_option('LOGIN_TEMPLATE'),
+        redirect_authenticated_user=get_option('REDIRECT_AUTH_USERS')),
+        name="login"),
 ]
