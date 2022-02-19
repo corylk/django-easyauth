@@ -22,8 +22,6 @@ python -m pip install --user /path/to/dist/django-easyauth-0.1.tar.gz
 
 # Configuration
 
-## Required configuration
-
 ### Add to installed apps
 
 ```py
