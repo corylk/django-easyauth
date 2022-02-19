@@ -51,6 +51,14 @@ urlpatterns = [
 ]
 ```
 
+### Change the header used to access the user ID
+
+By default, the user ID (email) is expected in the `X-MS-CLIENT-PRINCIPAL-NAME` header provided by App Service ([read more](https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-user-identities)). To change which header is used, specify it in settings:
+
+```py
+USERID_HEADER = 'x-ms-some-other-header'
+```
+
 ### Override the login template
 
 Optionally, if you want to override the fallback login template, it can be changed in settings:
