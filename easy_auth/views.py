@@ -12,4 +12,4 @@ class EasyAuthLoginView(LoginView):
                 redirect_to = self.get_success_url()
                 if redirect_to != self.request.path:
                     return HttpResponseRedirect(redirect_to)
-        return super().as_view(template_name=self.template_name)(request)
+        return LoginView.as_view(template_name=self.template_name)(request)
